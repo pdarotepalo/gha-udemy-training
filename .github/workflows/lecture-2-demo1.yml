@@ -1,0 +1,26 @@
+name: "Lecture 2: Events Demo 1"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        working-directory: lecture-2
+        run: npm ci
+      - name: Test code
+        working-directory: lecture-2
+        run: npm run test
+      - name: Build code
+        working-directory: lecture-2
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploying..."
