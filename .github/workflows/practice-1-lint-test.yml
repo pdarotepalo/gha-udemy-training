@@ -1,4 +1,4 @@
-name: "🧾🚧 Lint, Test, and Build"
+name: "🏗️ Lint, Test, and Build"
 
 on: push
 
@@ -37,6 +37,6 @@ jobs:
       - name: ♻️ Install dependencies
         working-directory: practice-1
         run: npm ci
-      - name: 🏗️ Build
+      - name: 🔨 Build
         working-directory: practice-1
         run: npm run build
