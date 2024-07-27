@@ -1,9 +1,12 @@
 name: "Lecture 2: Events Demo 1"
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,7 +15,7 @@ jobs:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         working-directory: lecture-2
         run: npm ci
