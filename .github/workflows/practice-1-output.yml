@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚨 Alert
-        run: echo "An issue has been ${{ github.event_name }}"
+        run: echo "An issue has been ${{ github.ref_type }}"
