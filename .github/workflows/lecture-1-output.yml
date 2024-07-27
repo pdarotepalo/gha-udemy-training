@@ -1,4 +1,4 @@
-name: Output Information
+name: "Lecture 1: Output Information"
 
 on: workflow_dispatch
 

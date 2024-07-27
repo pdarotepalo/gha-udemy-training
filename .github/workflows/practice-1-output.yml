@@ -1,4 +1,4 @@
-name: 🔔 Issues Notification
+name: "Practice 1: 🔔 Issues Notification"
 
 on:
   issues:

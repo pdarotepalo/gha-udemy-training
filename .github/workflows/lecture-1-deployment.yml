@@ -1,4 +1,4 @@
-name: Frontend CI
+name: "Lecture 1: Frontend CI"
 
 on: workflow_dispatch
 
