@@ -1,0 +1,42 @@
+name: "🧾🚧 Lint, Test, and Build"
+
+on: push
+
+jobs:
+  lint-test:
+    name: 🧾 Lint and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+      - name: ⚙️ Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: ♻️ Install dependencies
+        working-directory: practice-1
+        run: npm ci
+      - name: ✅ Lint
+        working-directory: practice-1
+        run: npm run lint
+      - name: 🧪 Test
+        working-directory: practice-1
+        run: npm test
+
+  build:
+    name: 🚧 Build
+    needs: lint-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+      - name: ⚙️ Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: ♻️ Install dependencies
+        working-directory: practice-1
+        run: npm ci
+      - name: 🏗️ Build
+        working-directory: practice-1
+        run: npm run build
