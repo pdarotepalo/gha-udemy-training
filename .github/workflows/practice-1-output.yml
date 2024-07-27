@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚨 Alert
-        run: echo "An issue has been ${{ github.event.issue.state }}"
+        run: echo "The issue number ${{ github.event.issue.number }} has been ${{ github.event.action }}."
