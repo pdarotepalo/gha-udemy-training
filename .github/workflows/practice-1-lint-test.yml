@@ -1,6 +1,6 @@
 name: "Practice 1: 🏗️ Lint, Test, and Build"
 
-on: push
+on: workflow_dispatch
 
 jobs:
   lint-test:
