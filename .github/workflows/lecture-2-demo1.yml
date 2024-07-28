@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo "The pull request ${{ github.event.pull_request.url }} has been ${{ github.event.action }}."
+        run: echo "The pull request ${{ github.event.pull_request.html_url }} has been ${{ github.event.action }}."
       - name: Get code
         uses: actions/checkout@v4
       - name: Install dependencies
