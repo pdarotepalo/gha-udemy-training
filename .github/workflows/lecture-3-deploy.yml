@@ -1,0 +1,49 @@
+name: "Lecture 3: Deploy website"
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        working-directory: lecture-3
+        run: npm ci
+      - name: Lint code
+        working-directory: lecture-3
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+
+  # NOTE: Upload artifact
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        working-directory: lecture-3
+        run: npm ci
+      - name: Build website
+        working-directory: lecture-3
+        run: npm run build
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-build
+          path: |
+            lecture-3/build
+            package.json
+
+  # TODO: Download artifact
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying..."
