@@ -1,12 +1,6 @@
 name: "Lecture 1: Frontend CI"
 
-on: 
-  workflow_dispatch:
-  push:
-    paths-ignore:
-      - ./github/**
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   test:

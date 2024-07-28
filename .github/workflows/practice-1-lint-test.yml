@@ -1,12 +1,6 @@
 name: "Practice 1: 🏗️ Lint, Test, and Build"
 
-on: 
-  workflow_dispatch:
-  push:
-    paths-ignore:
-      - ./github/**
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   lint-test:
