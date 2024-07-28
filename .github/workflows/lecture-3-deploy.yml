@@ -38,7 +38,7 @@ jobs:
           name: website-build
           path: |
             lecture-3/build
-            package.json
+            lecture-3/package.json
 
   # TODO: Download artifact
   deploy:
