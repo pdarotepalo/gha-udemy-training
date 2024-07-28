@@ -52,7 +52,6 @@ jobs:
         with:
           name: dist-files
       - name: Output contents
-        working-directory: lecture-3
         run: ls -laG
       - name: Deploy
         run: echo "Deploying..."
