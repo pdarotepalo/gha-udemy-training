@@ -7,13 +7,18 @@ on:
       - edited
       - reopened
   workflow_dispatch:
+  push:
+    paths-ignore:
+      - ./github/*
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo "${{ toJSON(github.event) }}"
+        run: echo "The pull request ${{ github.event.pull_request.html_url }} has been ${{ github.event.action }}."
       - name: Get code
         uses: actions/checkout@v4
       - name: Install dependencies
