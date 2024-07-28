@@ -17,6 +17,7 @@ jobs:
         working-directory: lecture-3
         run: npm run lint
       - name: Test code
+        working-directory: lecture-3
         run: npm run test
 
   # NOTE: Upload artifact
