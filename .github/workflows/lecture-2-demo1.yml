@@ -7,6 +7,11 @@ on:
       - edited
       - reopened
   workflow_dispatch:
+  push:
+    paths-ignore:
+      - ./github/*
+    branches:
+      - main
 
 jobs:
   deploy:
