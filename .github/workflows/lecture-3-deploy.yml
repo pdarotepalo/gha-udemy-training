@@ -37,14 +37,22 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: |
-            dist
-            package.json
+          path: lecture-3/dist
+          # path: |
+          #   dist
+          #   package.json
 
-  # TODO: Download artifact
+  # NOTE: Download artifact
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+      - name: Output contents
+        working-directory: lecture-3
+        run: ls -laG
       - name: Deploy
         run: echo "Deploying..."
