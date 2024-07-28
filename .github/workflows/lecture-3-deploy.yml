@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('lecture-3/package-lock.json') }}
       - name: Install dependencies
         working-directory: lecture-3
         run: npm ci
@@ -29,6 +34,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('lecture-3/package-lock.json') }}
       - name: Install dependencies
         working-directory: lecture-3
         run: npm ci
