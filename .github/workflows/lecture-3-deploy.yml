@@ -36,10 +36,10 @@ jobs:
       - name: Archive artifact
         uses: actions/upload-artifact@v4
         with:
-          name: website-build
+          name: dist-files
           path: |
-            lecture-3/build
-            lecture-3/package.json
+            dist
+            package.json
 
   # TODO: Download artifact
   deploy:
