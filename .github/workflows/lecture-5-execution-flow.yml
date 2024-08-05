@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "lecture-5/**"
 jobs:
   lint:
     runs-on: ubuntu-latest
