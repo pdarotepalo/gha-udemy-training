@@ -4,9 +4,18 @@ on:
     branches:
       - main
       - dev
+    paths:
+      - "lecture-4/**"
+
+env:
+  MONGODB_DB_MANE: "lecture-4"
+
 jobs:
   test:
-    environment: testing
+    env:
+      MONGODB_CLUSTER_ADDRESS:
+      MONGODB_USERNAME:
+      MONGODB_PASSWORD:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
